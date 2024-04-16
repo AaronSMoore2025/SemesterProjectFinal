@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+    <header>
+        <title>Song Requests</title>
+        <link rel="stylesheet" href="styles.css">
+    </header>
+    <body>
+        <div id="content">
+            <header id="songRequestsHeader">
+                <h1 class="songRequestsH1">Song Requests</h1>
+                <div id="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <nav id="nav-items">
+                    <section class="four">
+                        <ul id="topLinksId" class="topLinks hide">
+                            <div class="columns1">
+                            <li class="li1"><a href="../index.html">Home</a></li>
+                            <li class="li1"><a href="../experience/index.html">Experience</a></li>
+                            <li class="li1"><a href="../packages/index.html">Packages</a></li>
+                            <li class="li1"><a href="#">Requests</a></li>
+                            <li class="li1"><a href="../contactme/index.html">Contact</a></li>
+                            </div>
+                        </ul>
+                    </section>
+                </nav>
+
+
+            </header>
+            <main>
+                <div id="columns">
+                    <section id="songSection"></section>
+                    <section id="formSection">
+                        <h1>Song Requests</h1>
+                        <h3 class="formHeader">Please Enter Your Song Information Below And It Will Be Considered At Future Shows</h3>
+                        <form id="form-song">
+                            <p>
+                              <label for="song-name">Song Name:</label>
+                              <input
+                                type="text"
+                                id="song-name"
+                                name="song-name"
+                                required
+                                minlength="3"
+                              />
+                            </p>
+                            <p>
+                              <label for="artist-name">Artist Name:</label>
+                              <input
+                              type="text"
+                              id="artist-name"
+                              name="artist-name"
+                              required
+                              minlength="4"
+                                />
+                            </p>
+                              <label for="genre">Genre: </label>
+                              <select name="genre">
+                                <option value="notSelected">--Not Selected--</option>
+                                <option value="alternative">Alternative</option>
+                                <option value="Dance EDM">Dance EDM</option>
+                                <option value="Pop">Pop</option>
+                                <option value="Rap">Rap</option>
+                                <option value="Other">Other</option>
+                              </select>
+                            </p>
+                  
+                            <p>
+                              <input type="checkbox" required name="terms" /><label
+                                for="terms"
+                                class="inline"
+                                >I agree to the terms.</label
+                              >
+                            </p>
+                  
+                            <p>
+                              <button type="submit">Submit</button>
+                            </p>
+                          </form>
+                    </section>
+                </div>
+                <!--
+                <div class="columns">
+                    <section class="one">
+                        <img class="myImg" src="../images/spotify.png" height="500" width="350">
+                    </section>
+                    <section class="five">
+                        <section class="two">
+                            <h1 class="songH1">Song Title:</h1>
+                        </section>
+                        <section class="three">
+                            <center><p>User will input song here.</p></center>
+                        </section>
+                        <section class="two">
+                            <h1 class="songH1">Artist:</h1>
+                        </section>
+                        <section class="three">
+                            <center><p>User will input artist here</p></center>
+                        </section>
+                        <section class="two">
+                            <h1 class="songH1">Genre:</h1>
+                        </section>
+                        <section class="three">
+                            <center><p>User will input genre here</p></center>
+                        </section>
+                    </section>
+                </div>
+                -->
+            </main>
+    </body>
+<script src="requestsong.js"></script>
+<script src="form.js"></script>
+<script src="script.js"></script>
+<script src="form.js"></script>
+<script src="requestsong.js"></script>
+</html>

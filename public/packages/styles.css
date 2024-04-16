@@ -1,0 +1,183 @@
+body {
+    background: #383838;
+    background-image: url(/images/djBackground.png);
+    background-size: 100%;
+}
+
+img {
+    width: 95%;
+    height: auto;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 5px;
+    min-width: 425px;
+}
+
+#packagesHeader {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: #1a535c;
+    margin: 0px;
+    padding: 0px;
+}
+
+.packagesH1{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    font-family: cursive;
+    color: #4ecdc4;
+}
+
+.li1 {
+    border : solid 1px #0c343d;
+    background : #4ecdc4;
+    list-style-type: none;
+    padding: 5px;
+    margin: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 5px;
+}
+
+.li1 a {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+.topLinks {
+    position:absolute;
+    right:0;
+    margin:auto;
+    padding-top: 0px;
+}
+
+.one {
+    margin-right: 20px;
+    margin-left: 20px;
+    background: #4ecdc4;
+    border-radius: 5px;
+}
+
+.two {
+    margin: 20px;
+    background: #4ecdc4;
+    border-radius: 5px;
+}
+
+.three {
+    margin-right: 20px;
+    margin-top: 75px;
+    margin-left: 20px;
+    background: #4ecdc4;
+    border-radius: 5px;
+}
+
+.five {
+    margin: 20px;
+    background: #4ecdc4;
+    border-radius: 5px;
+}
+
+.packP {
+    margin: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+#hamburger {
+    padding: 10px;
+}
+  
+  
+#hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+/* Topography */
+@media only screen and (min-width: 768px){
+
+    .columns{
+        display:flex;
+    }
+
+    .one {
+        margin-top: 75px;
+    }
+
+    .columns1 {
+        display: flex;
+    }
+
+    #experienceHeader{
+        display: flex;
+    }
+    
+    .topLinks {
+        display: flex;
+    }
+
+    .topLinks{
+        position: absolute;
+        right: 0;
+        margin-top: 10px;
+    }
+
+    #hamburger {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .columns1 {
+        display: flex;
+    }
+    .main-h1{
+        display: flex;
+    }
+    
+    #hamburger {
+        margin-left: 90%;
+        margin-top: 0px;
+        position: absolute;
+        top: 0;
+    }
+
+    #nav-items{
+        flex:1;
+    }
+
+    .li1 {
+        border: none;
+        margin: none;
+    }
+
+    #topLinksId{
+        margin-top: 50px;
+        margin-right: 10px;
+    }
+
+    .one {
+        margin-top: 85px;
+    }
+
+    .two {
+        margin-top: 70px;
+    }
+    .three {
+        margin-top: 20px;
+    }
+}
+

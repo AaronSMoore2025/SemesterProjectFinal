@@ -1,0 +1,167 @@
+body {
+    background: #383838;
+    background-image: url(/images/djBackground.png);
+    background-size: 100%;}
+
+#experienceHeader {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: #1a535c;
+    margin: 0px;
+    padding: 0px;
+}
+
+.experienceH1{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    font-family: cursive;
+    color: #4ecdc4;
+}
+
+.li1 {
+    border : solid 1px #0c343d;
+    background : #4ecdc4;
+    list-style-type: none;
+    padding: 5px;
+    margin: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 5px;
+}
+
+.li1 a {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+.topLinks {
+    position:absolute;
+    right:0;
+    margin:auto;
+    padding-top: 0px;
+}
+
+.one {
+    margin-top: 75px;
+    background: #4ecdc4;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.two {
+    margin-top: 50px;
+    background: #4ecdc4;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.experienceP {
+    margin: 25px;
+}
+
+.myImg {
+    padding-top: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+#hamburger {
+    padding: 10px;
+}
+  
+  
+#hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+}
+/* Topography */
+@media only screen and (min-width: 768px){
+
+#experienceHeader{
+    display: flex;
+}
+
+.topLinks {
+    display: flex;
+}
+
+.columns {
+    display: flex;
+}
+
+.columns1{
+    display: flex;
+}
+
+.one {
+    flex: 1;
+}
+
+.two {
+    flex: 1;
+}
+
+.topLinks{
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+}
+
+#hamburger {
+    display: none;
+}
+}
+
+@media only screen and (max-width:768px){
+    .columns1 {
+        display: flex;
+    }
+
+    .main-h1{
+        display: flex;
+    }
+    
+    #hamburger {
+        margin-left: 90%;
+        margin-top: 0px;
+        position: absolute;
+        top: 0;
+    }
+
+    #nav-items{
+        flex:1;
+    }
+
+    .li1 {
+        border: none;
+        margin: none;
+    }
+
+    #topLinksId{
+        margin-top: 50px;
+        width: auto;
+        margin-right: 10px;
+        margin-left: auto;
+    }
+
+    .one{
+        margin-top: 85px;
+    }
+
+}
+
+

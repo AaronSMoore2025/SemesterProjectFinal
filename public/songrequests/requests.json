@@ -1,0 +1,31 @@
+<<<<<<< HEAD
+{
+    [
+        
+    ]
+}
+=======
+[
+    {
+        "image": "Saving_Up.png",
+        "name": "Saving Up",
+        "artist": "Dom Dolla",
+        "genre": "Dance, EDM"
+
+    },
+
+    {
+        "image": "Murder_Dancefloor.png",
+        "name": "Murder On the Dancefloor",
+        "artist": "Siphie Ellis-Bextor",
+        "genre": "Pop"
+    },
+
+    {
+        "image": "Shiver.png",
+        "name": "Shiver",
+        "artist": "John Summit",
+        "genre": "Dance, EDM"
+    }
+]
+>>>>>>> refs/remotes/origin/main
