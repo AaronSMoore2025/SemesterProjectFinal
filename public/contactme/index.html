@@ -34,12 +34,14 @@
                 <div class="columns">
                     <section class="one">
                         <center><h1 class="contactH1-top">Contact Me:</h1></center>
-                        <center><p class="contactP">Contact me about any events that you need a DJ. I will respond as promptly as possible. More will be added to this later.</p></center>
+                        <center><p class="contactP">
+                            Connections are the lifeblood of the DJing world. If you would like me to DJ a party for you please reach out and give me your information. Similarly, if you are a DJ reach out as well. I am always looking for people to collaborate with. Finally, if you are a bar manager, please reach out so that I can find times in my schedule to work with you. I will respond in a timely manner!
+                        </p></center>
                     </section>
                     <section class="two">
                         <form id="contact-me">
                             <p>
-                                <label for="firstName">First Name: </label>
+                                <label for="first-name">First Name: </label>
                                 <input
                                         type="text"
                                         id="first-name"
@@ -49,7 +51,7 @@
                                       />
                             </p>
                             <p>
-                                <label for="lastName">Last Name: </label>
+                                <label for="last-name">Last Name: </label>
                                 <input
                                         type="text"
                                         id="last-name"
@@ -59,11 +61,21 @@
                                       />
                             </p>
                             <p>
-                                <label for="reason">Reason For Contact: </label>
+                                <label for="contact-info">Phone Number or Email: </label>
+                                <input
+                                    type="text"
+                                    id="contact-info"
+                                    name="contact-info"
+                                    required
+                                    minlength="3"
+                                />
+                            </p>
+                            <p>
+                                <label for="event-type">Type of Event: </label>
                                 <input
                                         type="text"
-                                        id="reason"
-                                        name="reason"
+                                        id="event-type"
+                                        name="event-type"
                                         required
                                         minlength="3"
                                     />
@@ -82,10 +94,12 @@
                                 <button type="submit">Submit</button>
                             </p>
                         </form>
+                        <div id="data-filler"></div>
                     </section>
                 </div>
-            
+                <section id="data-section"></section>
             </main>
     </body>
     <script src="script.js"></script>
+    <script src="form.js"></script>
 </html>

@@ -33,6 +33,7 @@ body {
 
 .contactP {
     text-align: center;
+    padding: 3px;
 }
 
 .li1 {
@@ -71,6 +72,8 @@ body {
 .two{
     margin-top: 75px;
     background: #4ecdc4;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .three{
@@ -79,11 +82,21 @@ body {
     border-radius: 5px;
 }
 
+#data-section {
+    text-align: center;
+    background: #4ecdc4;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 20px;
+    border-radius: 5px;
+}
 .five{
     border : solid 1px #0c343d;
     background: #4ecdc4;
     border-radius: 5px;
 }
+
+
 
 .hide {
     display: none;

@@ -4,6 +4,16 @@ body {
     background-size: 100%;
 }
 
+#requestASongSection{
+    background: #4ecdc4;
+    text-align: center;
+    margin-top: 50px;
+    padding: 0px;
+}
+
+#songDisplaySection{
+    margin-top: 50px;
+}
 #editDeleteSection{
     float: right;
 }
@@ -11,20 +21,25 @@ body {
 #myImage{
     height: 125px;
     width:125px;
+}    
+
+#informationSection {
+    padding-right: 150px;
 }
 #totalSection {
     background: #4ecdc4;
     margin: 5px;
-
 }
 
 .hidden {
     display: none;
 }
 
+/*
 #add-song-header{
     margin-top: 40px;
 }
+*/
 
 #songDisplaySection{
 
@@ -223,6 +238,14 @@ h1{
 
     #image {
         display:flex;
+    }
+
+    #requestASongSection {
+        flex: 1;
+    }
+
+    #SongDisplaySection{
+        flex: 1;
     }
 }
 

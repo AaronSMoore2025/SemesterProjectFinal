@@ -10,11 +10,10 @@ const getSongs = async () => {
 };
 
 const showSongs = async() => {
-
     let songs = await getSongs();
-    document.getElementById("song-list").innerHTML = "";
-    
-    songs.forEach((song) => { 
+    document.getElementById("song-list").innerHTML;
+
+    songs.forEach((song) => {
         const editDeleteSection = document.createElement("section");
         editDeleteSection.id = "editDeleteSection";
         const totalSection = document.createElement("section");
@@ -61,90 +60,43 @@ const showSongs = async() => {
         totalSection.append(informationSection);
         totalSection.append(editDeleteSection);
 
-        document.getElementById("song-list").append(totalSection);
+        //document.getElementById("song-list").append(totalSection);
+        document.getElementById("songDisplaySection").append(totalSection);
 
+        eLink.onclick = (e) => {
+            e.preventDefault();
+            showSongForm();
+        }
+        
+        dLink.onclick = deleteSong.bind(this, song);
+        
+        populateEditForm(song);
 
+        /*
         totalSection.onclick = (e) => {
             e.preventDefault();
-            displayDetails(song);
+            displayEditForm(song);
         };
+        */
 
         
     });
     
 };
 
+showSongs();
+
 /*
-const displayDetails = (song) => {
-    openDialog("song-details");
-    const songDetails = document.getElementById("song-details");
-    songDetails.innerHTML = "";
-    songDetails.classList.remove("hidden");
-
-    const dLink = document.createElement("a");
-    dLink.innerHTML = "	&#9249;";
-    songDetails.append(dLink);
-    dLink.id = "delete-link";
-
-    const eLink = document.createElement("a");
-    eLink.innerHTML = "&#9998;";
-    songDetails.append(eLink);
-    eLink.id = "edit-link";
-
-    const h2 = document.createElement("h2");
-    h2.innerHTML = song.name;
-    songDetails.append(h2);
-    console.log(h2);
-
-    const p = document.createElement("p");
-    p.innerHTML = song.artist;
-    songDetails.append(p)
-
-    const p2 = document.createElement("p");
-    p.innerHTML = song.genre;
-    songDetails.append(p2);
-
-    const myImage = document.createElement("img");
-    myImage.src = "/images/" + song.image;
-    songDetails.append(myImage);
-    */
-
-    /*
-    const p = document.createElement("p");
-    p.innerHTML = "Description: " + song.description;
-    songDetails.append(p);
-
-    const p2 = document.createElement("p");
-    p2.innerHTML = "Supplies: " + song.supplies;
-    songDetails.append(p2);
-    */
-
-    /*
-    const spoon = document.createElement("section");
-    spoon.classList.add("spoon");
-    songDetails.append(spoon);
-
-    
-
-    document.getElementById("dialog-details").append(songDetails);
-
-
-    document.getElementById("dialog-close").onclick = () => {
-        document.getElementById("add-song-form").classList.add("hidden");
-        document.getElementById("song-details").classList.remove("hidden");
-        document.getElementById("dialog").style.display = "none";    
-    };
-
-    eLink.onclick = (e) => {
-        e.preventDefault();
-        showSongForm();
-    }
-    dLink.onclick = deleteSong.bind(this, song);
-    populateEditForm(song);
-
+const displayEditForm = (song) => {
+    document.getElementById("song-list").style.display = "block";
 };
 */
 
+const showSongForm = () => {
+    console.log("in here");
+    document.getElementById("song-details").classList.add("hidden");
+    document.getElementById("add-song-form").classList.remove("hidden");
+};
 
 const populateEditForm = (song) => {
     const form = document.getElementById("add-song-form");
@@ -221,17 +173,6 @@ const deleteSong = async (song) =>{
     document.getElementById("dialog").style.display = "none";
 };
 
-const getSupplies = () => {
-    const inputs = document.querySelectorAll("#supply-boxes input");
-    let supplies = [];
-
-    inputs.forEach((input) => {
-        supplies.push(input.value);
-    });
-
-    return supplies;
-}
-
 const resetForm = () => {
     const form = document.getElementById("add-song-form");
     form.reset();
@@ -239,10 +180,11 @@ const resetForm = () => {
     document.getElementById("img-prev").src = "";
 };
 
-const showSongForm = () => {
-    console.log("in here");
-    document.getElementById("song-details").classList.add("hidden");
-    document.getElementById("add-song-form").classList.remove("hidden");
+
+
+
+const showEditForm = (e) => {
+
 }
 
 const showSongForm2 = (e) => {
@@ -250,6 +192,8 @@ const showSongForm2 = (e) => {
     openDialog2("add-song-form");
     resetForm();
 }
+
+
 
 const openDialog2 = (id) => {
     document.getElementById("dialog").style.display = "block";
@@ -259,7 +203,7 @@ const openDialog2 = (id) => {
     document.getElementById(id).classList.remove("hidden");
   };
 
-/*
+
 const addSupplies = (e) => {
     e.preventDefault();
     const section = document.getElementById("supply-boxes");
@@ -267,16 +211,15 @@ const addSupplies = (e) => {
     input.type = "text";
     section.append(input);
 }
-*/
 
+/*
 const openDialog = (id) => {
     document.getElementById("dialog").style.display = "block";
 }
+*/
 
-showSongs();
-//document.getElementById("add-song-form").onsubmit = addSong;
+document.getElementById("add-song-form").onsubmit = addSong;
 document.getElementById("add-link").onclick = showSongForm2;
-//document.getElementById("add-supply").onclick = addSupplies;
 
 document.getElementById("img").onchange = (e) => {
     if (!e.target.files.length) {
@@ -287,3 +230,5 @@ document.getElementById("img").onchange = (e) => {
         e.target.files.item(0)
     );
 };
+
+
