@@ -1,3 +1,4 @@
+/*
 const submitSongForm = (e) => {
     e.preventDefault(); //don't refresh the page
     
@@ -23,17 +24,18 @@ const submitSongForm = (e) => {
     formSection.append(Genre);
 
 
-    /*
-    const title = document.createElement("h1");
-    title.innerHTML = songName;
-    titleSection.append(title);
+    
+    //const title = document.createElement("h1");
+    //title.innerHTML = songName;
+    //titleSection.append(title);
 
-    const songArtist = document.createElement("p");
-    songArtist.innerHTML = 
-    */
+    //const songArtist = document.createElement("p");
+    //songArtist.innerHTML = 
+    
 
 
 }
+
 
 const getRadioValue = (radioName) => {
     const radios = document.getElementsByName(radioName);
@@ -48,3 +50,5 @@ const getRadioValue = (radioName) => {
 };
 
 document.getElementById("form-song").onsubmit = submitSongForm;
+
+*/

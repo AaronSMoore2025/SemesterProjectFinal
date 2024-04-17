@@ -12,7 +12,7 @@ app.use(cors());
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb+srv://asm25:tMhK79wEcuM10rfR@crafts.tesowrt.mongodb.net/?retryWrites=true&w=majority&appName=crafts")
+  .connect("mongodb+srv://asm25:tMhK79wEcuM10rfR@finalproject.nxyuw6t.mongodb.net/?retryWrites=true&w=majority&appName=finalProject")
   .then(() => {
     console.log("connected to mongodb");
   })
@@ -21,14 +21,15 @@ mongoose
   });
 
   //tMhK79wEcuM10rfR
-const craftSchema = new mongoose.Schema({
-  name: String,
-  description:String,
-  supplies :[String],
-  image: String
+const songSchema = new mongoose.Schema({
+    _id: mongoose.SchemaTypes.ObjectId,
+  name:String,
+  artist:String,
+  genre:String,
+  image:String
 });
 
-const Craft = mongoose.model("Craft", craftSchema);
+const Song = mongoose.model("Song", songSchema);
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -41,7 +42,7 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage: storage });
 
-app.get("/",(req,res)=>{
+app.get("api/songs",(req,res)=>{
     console.log("someone is launching the website");
     res.sendFile(__dirname + "/index.html");
 });
@@ -49,8 +50,7 @@ app.get("/",(req,res)=>{
 
 
 
-app.get("/api/crafts", (req, res) => {
-    //res.send(crafts);
+app.get("/api/songs", (req, res) => {
     getSongs(res);
 });
 
@@ -59,7 +59,7 @@ const getSongs  = async (res) => {
     res.send(songs);
 };
       
-app.post("/api/crafts", upload.single("img"), (req, res) => {
+app.post("/api/songs", upload.single("img"), (req, res) => {
     console.log("in post");
     const result = validateSongs(req.body);
     console.log(result);
@@ -70,17 +70,16 @@ app.post("/api/crafts", upload.single("img"), (req, res) => {
   }
 
   const song = new Song({
-    //_id: crafts.length + 1,
     name: req.body.name,
-    description: req.body.description,
-    supplies: req.body.supplies.split(","),
+    description: req.body.artist,
+    supplies: req.body.genre
   });
 
   if (req.file) {
     song.image = req.file.filename;
   }
   
-  createSong(craft, res);
+  createSong(song, res);
     
 
 });
@@ -91,7 +90,7 @@ const createSong = async (song, res) => {
     res.send(song);
 }
 
-app.put("/api/crafts/:id", upload.single("img"), (req,res)=>{
+app.put("/api/songs/:id", upload.single("img"), (req,res)=>{
 
     const result = validateSongs(req.body);
 
@@ -107,8 +106,8 @@ const updateSong = async (req, res) => {
     console.log(req.body);
     let fieldsToUpdate = {
         name: req.body.name,
-        description: req.body.description,
-        supplies: req.body.supplies.split(",")
+        artist: req.body.artist,
+        genre: req.body.genre
     };
 
     if (req.file) {
@@ -120,7 +119,7 @@ const updateSong = async (req, res) => {
     res.send(result);
 }
 
-app.delete("/api/crafts/:id", (req,res)=>{
+app.delete("/api/songs/:id", (req,res)=>{
     removeSong(res, req.params.id);
   });
 
@@ -132,12 +131,12 @@ app.delete("/api/crafts/:id", (req,res)=>{
 const validateSongs = (song) => {
     const schema = Joi.object({
       _id: Joi.allow(""),
-      supplies: Joi.allow(""),
+      genre: Joi.string().min(3).required,
       name: Joi.string().min(3).required(),
-      description: Joi.string().min(3).required(),
+      artist: Joi.string().min(3).required(),
     });
   
-    return schema.validate(craft);
+    return schema.validate(song);
   };
 
 app.listen(3000, ()=>{

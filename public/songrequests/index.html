@@ -31,6 +31,59 @@
 
             </header>
             <main>
+            <div id="columns">
+                <div id="songDisplaySection"></div>
+            </div>
+                <div class="columns">
+                    <div id="dialog" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <div class="w3-container">
+                                <span id="dialog-close" class="w3-button w3-display-topright">&times;</span>
+                                <section id="dialog-content" class="columns">
+                                    <section>
+                                    </section>
+                                    <section id="dialog-image">
+                                    </section>
+                                    <section id="dialog-details">
+                                        <h1 id="add-song-header">Request A Song: <a href="#" id="add-link">+</a></h1>
+                                        <form id="add-song-form" method="POST" class="hidden">
+                                            <input type="hidden" id="_id" name="_id">
+                                            <p>
+                                                <label for="name">Song Name: </label>
+                                                <input type="text" id="name" name="name" required />
+                                            </p>
+                                            <p>
+                                                <label for="artist">Artist: </label>
+                                                <input type="text" id="artist" name="artist" required />
+                                            </p>
+                                            <p>
+                                                <label for="genre">Genre: </label>
+                                                <input type="text" id="genre" name="genre" required />
+                                            </p>
+                                            <section>
+                                                <p id="img-preview-section">
+                                                    <img id="img-prev">
+                                                </p>
+                                                <p>
+                                                    <label for="img">Upload Song Image: </label>
+                                                    <input type="file" id="img" name="img" accept="image/*" />
+                                                </p>
+                                            </section>
+                                            <p>
+                                                <button type="submit">Submit</button>
+                                            </p>
+                                        </form>
+            
+                                        <section id="song-details" class="hidden"></section>
+                                    </section>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="song-list"></div>
+
+            <!--
                 <div id="columns">
                     <section id="songSection"></section>
                     <section id="formSection">
@@ -82,6 +135,7 @@
                           </form>
                     </section>
                 </div>
+                -->
                 <!--
                 <div class="columns">
                     <section class="one">
@@ -116,4 +170,5 @@
 <script src="script.js"></script>
 <script src="form.js"></script>
 <script src="requestsong.js"></script>
+<script src="script2.js"></script>
 </html>

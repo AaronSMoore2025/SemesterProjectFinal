@@ -4,6 +4,35 @@ body {
     background-size: 100%;
 }
 
+#editDeleteSection{
+    float: right;
+}
+
+#myImage{
+    height: 125px;
+    width:125px;
+}
+#totalSection {
+    background: #4ecdc4;
+    margin: 5px;
+
+}
+
+.hidden {
+    display: none;
+}
+
+#add-song-header{
+    margin-top: 40px;
+}
+
+#songDisplaySection{
+
+}
+
+#dialog-details{
+    background: #4ecdc4;
+}
 #songRequestsHeader {
     position: absolute;
     top: 0px;
@@ -130,9 +159,16 @@ h1{
 .formHeader {
     border-bottom: solid 1px black;
 }
+
+#totalSection {
+    display: flex;
+}
 /* Topography */
 @media only screen and (min-width: 768px){
 
+    #totalSection{
+        display: flex;
+    }
     #columns {
         display: flex;
     }

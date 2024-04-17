@@ -29,32 +29,62 @@
                 </nav>
             </header>
             <main class="main-content">
+                
+                
                 <div class="columns">
                     <section class="one">
                         <center><h1 class="contactH1-top">Contact Me:</h1></center>
                         <center><p class="contactP">Contact me about any events that you need a DJ. I will respond as promptly as possible. More will be added to this later.</p></center>
                     </section>
                     <section class="two">
-                        <section class="three">
-                            <h1 class="contactH1">Name and Contact Info:</h1>
-                        </section>
-                        <section class="five">
-                            <p class="contactP">User will input info here</p>
-                        </section>
-                        <section class="three">
-                            <h1 class="contactH1">Event Description:</h1>
-                        </section>
-                        <section class="five">
-                            <p class="contactP">User will input info here</p>
-                        </section>
-                        <section class="three">
-                            <h1 class="contactH1">Package:</h1>
-                        </section>
-                        <section class="five">
-                            <p class="contactP">User will input info here</p>
-                        </section>
+                        <form id="contact-me">
+                            <p>
+                                <label for="firstName">First Name: </label>
+                                <input
+                                        type="text"
+                                        id="first-name"
+                                        name="first-name"
+                                        required
+                                        minlength="3"
+                                      />
+                            </p>
+                            <p>
+                                <label for="lastName">Last Name: </label>
+                                <input
+                                        type="text"
+                                        id="last-name"
+                                        name="last-name"
+                                        required
+                                        minlength="3"
+                                      />
+                            </p>
+                            <p>
+                                <label for="reason">Reason For Contact: </label>
+                                <input
+                                        type="text"
+                                        id="reason"
+                                        name="reason"
+                                        required
+                                        minlength="3"
+                                    />
+                            </p>
+                            <p>
+                                <label for="questions">Specific Questions: </label>
+                                <input
+                                        type="text"
+                                        id="questions"
+                                        name="questions"
+                                        required
+                                        minlength="3"
+                                      />
+                            </p>
+                            <p>
+                                <button type="submit">Submit</button>
+                            </p>
+                        </form>
                     </section>
                 </div>
+            
             </main>
     </body>
     <script src="script.js"></script>
