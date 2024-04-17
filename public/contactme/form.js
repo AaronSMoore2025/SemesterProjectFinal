@@ -17,7 +17,7 @@ const submitContactForm = (e) => {
     //adding more to this later
 
 
-    mainSection.append("Success!");
+    mainSection.append("Success! Your Contact Has Been Submitted");
     const firstName = document.createElement("p");
     firstName.innerHTML = "First Name: " + FirstName;
     mainSection.append(firstName);

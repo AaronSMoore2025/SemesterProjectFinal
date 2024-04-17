@@ -22,7 +22,7 @@ mongoose
 
   //tMhK79wEcuM10rfR
 const songSchema = new mongoose.Schema({
-    _id: mongoose.SchemaTypes.ObjectId,
+    //x_id: mongoose.SchemaTypes.ObjectId,
   name:String,
   artist:String,
   genre:String,
@@ -33,7 +33,7 @@ const Song = mongoose.model("Song", songSchema);
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, "./public/images/");
+      cb(null, "./public/songrequests/images");
     },
     filename: (req, file, cb) => {
       cb(null, file.originalname);
@@ -71,8 +71,8 @@ app.post("/api/songs", upload.single("img"), (req, res) => {
 
   const song = new Song({
     name: req.body.name,
-    description: req.body.artist,
-    supplies: req.body.genre
+    artist: req.body.artist,
+    genre: req.body.genre
   });
 
   if (req.file) {
@@ -131,7 +131,7 @@ app.delete("/api/songs/:id", (req,res)=>{
 const validateSongs = (song) => {
     const schema = Joi.object({
       _id: Joi.allow(""),
-      genre: Joi.string().min(3).required,
+      genre: Joi.string().min(3).required(),
       name: Joi.string().min(3).required(),
       artist: Joi.string().min(3).required(),
     });

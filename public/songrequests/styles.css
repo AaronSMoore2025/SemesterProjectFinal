@@ -2,33 +2,89 @@ body {
     background: #383838;
     background-image: url(/images/djBackground.png);
     background-size: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.li1:hover{
+    background-color:white;
+}
+
+button {
+    background: #4ecdc4;
+}
+
+button:hover{
+    background-color:white;
+}
+
+#requestHeader {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#label{
+    width: 100px;
+}
+
+#add-song-header {
+    border-bottom: solid 1px black;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 #requestASongSection{
     background: #4ecdc4;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 55px;
     padding: 0px;
+    border-radius: 5px;
 }
+
 
 #songDisplaySection{
     margin-top: 50px;
 }
 #editDeleteSection{
-    float: right;
+    position: relative;
+    right: 0;
+}
+#w3-container {
+    padding: 0px;
+    margin: 0px;
 }
 
 #myImage{
-    height: 125px;
-    width:125px;
+    height: 140px;
+    width:140px;
+    padding: 0px;
+    margin: 0px;
 }    
 
+#dialog-content {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+#dialog-content.columns {
+    padding: 0px;
+    margin: 0px;
+}
+
 #informationSection {
-    padding-right: 150px;
+    padding-right:150px;
+    width: 100%;
 }
 #totalSection {
     background: #4ecdc4;
     margin: 5px;
+    border-radius: 5px;
+}
+
+.w3-container {
+    background: #4ecdc4;
 }
 
 .hidden {
@@ -48,6 +104,7 @@ body {
 #dialog-details{
     background: #4ecdc4;
 }
+
 #songRequestsHeader {
     position: absolute;
     top: 0px;

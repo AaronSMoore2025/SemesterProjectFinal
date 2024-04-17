@@ -11,6 +11,7 @@ const getSongs = async () => {
 
 const showSongs = async() => {
     let songs = await getSongs();
+    document.getElementById("songDisplaySection").innerHTML = "";
     document.getElementById("song-list").innerHTML;
 
     songs.forEach((song) => {
@@ -41,7 +42,7 @@ const showSongs = async() => {
         //document.getElementById("song-list").append(mainSection);
         
 
-        const myName = document.createElement("h1");
+        const myName = document.createElement("h3");
         myName.innerHTML = song.name;
         informationSection.append(myName);
         console.log(myName);
@@ -65,12 +66,14 @@ const showSongs = async() => {
 
         eLink.onclick = (e) => {
             e.preventDefault();
-            showSongForm();
+            displayEditForm(song);
+            //showSongForm();
+            //populateEditForm(song);
         }
         
         dLink.onclick = deleteSong.bind(this, song);
         
-        populateEditForm(song);
+        //populateEditForm(song);
 
         /*
         totalSection.onclick = (e) => {
@@ -86,11 +89,13 @@ const showSongs = async() => {
 
 showSongs();
 
-/*
+
 const displayEditForm = (song) => {
-    document.getElementById("song-list").style.display = "block";
+    openDialog();
+    populateEditForm(song);
+    showSongForm();
 };
-*/
+
 
 const showSongForm = () => {
     console.log("in here");
@@ -112,19 +117,21 @@ const addSong = async (e) => {
     const form = document.getElementById("add-song-form");
     const formData = new FormData(form);
     let response;
-    //formData.append("supplies", getSupplies());
 
+    console.log(form._id.value);
     console.log(...formData);
     
 
     if (form._id.value.trim() == "") {
         console.log("in post");
+        formData.delete("_id");
         response = await fetch("/api/songs", {
             method: "POST",
             body: formData,
         });
     } else {
         console.log("in put");
+        //console.log(form._id.value.trim());
         response = await fetch(`/api/songs/${form._id.value}`,{
             method: "PUT",
             body: formData,
@@ -176,7 +183,6 @@ const deleteSong = async (song) =>{
 const resetForm = () => {
     const form = document.getElementById("add-song-form");
     form.reset();
-    document.getElementById("supply-boxes").innerHTML = "";
     document.getElementById("img-prev").src = "";
 };
 
@@ -188,12 +194,22 @@ const showEditForm = (e) => {
 }
 
 const showSongForm2 = (e) => {
+    document.getElementById("_id").value = "";
     e.preventDefault();
     openDialog2("add-song-form");
     resetForm();
 }
 
+const openDialog = () => {
+    document.getElementById("dialog").style.display = "block";
+    document.querySelectorAll("#dialog-details > *").forEach((item) => {
+      item.classList.add("hidden");
+    });
+};
 
+const closeDialog = () => {
+    document.getElementById("dialog").style.display = "none";
+}
 
 const openDialog2 = (id) => {
     document.getElementById("dialog").style.display = "block";
@@ -217,7 +233,7 @@ const openDialog = (id) => {
     document.getElementById("dialog").style.display = "block";
 }
 */
-
+document.getElementById("dialog-close").onclick = closeDialog;
 document.getElementById("add-song-form").onsubmit = addSong;
 document.getElementById("add-link").onclick = showSongForm2;
 
