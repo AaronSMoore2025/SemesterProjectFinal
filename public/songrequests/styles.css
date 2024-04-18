@@ -41,6 +41,9 @@ button:hover{
     border-radius: 5px;
 }
 
+#add-song-header {
+    text-align: center;
+}
 
 #songDisplaySection{
     margin-top: 50px;
