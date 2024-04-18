@@ -39,7 +39,8 @@
                         </p>
                     </section>
                     <section class="two">
-                        <form id="contact-me">
+                        <form id="contact-me" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="7dcd2373-f61e-400a-a4f2-bd60d2c9487d">
                             <p>
                                 <label for="first-name">First Name: </label>
                                 <input
@@ -90,9 +91,21 @@
                                         minlength="3"
                                       />
                             </p>
+                            <input
+                                type="hidden"
+                                name="redirect"
+                                value="https://web3forms.com/success"
+                            />
+                            <input
+                                type="hidden"
+                                name="subject"
+                                value="Contact from Jaspers Website"
+                            />
+                            <input type="hidden" name="from_name" value="My Website" />
                             <p>
                                 <button type="submit">Submit</button>
                             </p>
+                            <p id="result"></p>
                         </form>
                         <div id="data-filler"></div>
                     </section>
@@ -102,4 +115,5 @@
     </body>
     <script src="script.js"></script>
     <script src="form.js"></script>
+    <script src="contactme.js"></script>
 </html>
