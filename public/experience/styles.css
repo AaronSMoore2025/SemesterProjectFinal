@@ -9,6 +9,11 @@ body {
     background-color:white;
 }
 
+video {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
 #experienceHeader {
     position: absolute;
     top: 0px;
@@ -71,6 +76,11 @@ body {
     border-radius: 5px;
 }
 
+#experienceMain h2 {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
 .experienceP {
     margin: 25px;
 }

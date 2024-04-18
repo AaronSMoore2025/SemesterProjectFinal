@@ -42,10 +42,12 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage: storage });
 
+  /*
 app.get("api/songs",(req,res)=>{
     console.log("someone is launching the website");
     res.sendFile(__dirname + "/index.html");
 });
+*/
 
 
 
@@ -111,11 +113,10 @@ const updateSong = async (req, res) => {
     };
 
     if (req.file) {
-        fieldsToUpdate.image = "images/" + req.file.filename;
+        fieldsToUpdate.image = req.file.filename;
     }
 
     const result = await Song.updateOne({ _id: req.params.id}, fieldsToUpdate);
-
     res.send(result);
 }
 
